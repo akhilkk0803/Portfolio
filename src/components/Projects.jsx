@@ -125,7 +125,7 @@ const Projects = () => {
   - Aims to provide customers with a convenient and hassle-free online shopping experience for tech products.
       `,
       githubLink: "https://github.com/akhilkk0803/Elo-ecommerce",
-      websiteLink: "https://eloecommerce-7cea4.web.app/",
+      websiteLink: "https://elo-ecommerce.vercel.app/",
     },
   ];
 
