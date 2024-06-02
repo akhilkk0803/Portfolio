@@ -1,5 +1,6 @@
 import React from "react";
 import ProfilePic from "../assets/myimg.png";
+import { motion } from "framer-motion";
 import { NavLink } from "react-router-dom";
 import { FaGithub } from "react-icons/fa";
 import Projects from "./Projects";
@@ -10,11 +11,20 @@ import Footer from "./Footer";
 const Home = () => {
   return (
     <>
-      <div className="flex justify-center text-white">
+      <motion.div
+        className="flex justify-center text-white"
+        initial={{
+          y: -1000,
+        }}
+        animate={{
+          y: 0,
+        }}
+        transition={{ duration: 1 }}
+      >
         <div className="flex md:flex-row  flex-col  justify-center gap-10 p-4  items-center">
           <div className="max-w-[45%] flex flex-col gap-6">
             <h2 className="text-xl">Akhil K Kulkarni</h2>
-            <h1 className="md:text-3xl text-xl">
+            <h1 className="text-3xl">
               A Engineering Student and a{" "}
               <span className="text-purple-500"> FULL STACK WEB DEVELOPER</span>
             </h1>
@@ -56,7 +66,13 @@ const Home = () => {
           </div>
           <div className="md:block hidden">
             <div className="relative">
-              <img src={ProfilePic} alt="" className="rounded-full " />
+              <img
+                src={
+                  "https://i.pinimg.com/originals/c0/4b/01/c04b017b6b9d1c189e15e6559aeb3ca8.png"
+                }
+                alt=""
+                className="rounded-full "
+              />
               <FaGithub
                 className="text-3xl absolute bottom-14 left-8 bg-purple-600 rounded-full hover:bg-black 
           cursor-pointer"
@@ -64,7 +80,7 @@ const Home = () => {
             </div>
           </div>
         </div>
-      </div>
+      </motion.div>
       <Skills />
       <Projects />
       <Education />
