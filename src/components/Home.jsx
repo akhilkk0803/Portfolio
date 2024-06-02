@@ -66,13 +66,7 @@ const Home = () => {
           </div>
           <div className="md:block hidden">
             <div className="relative">
-              <img
-                src={
-                  "https://i.pinimg.com/originals/c0/4b/01/c04b017b6b9d1c189e15e6559aeb3ca8.png"
-                }
-                alt=""
-                className="rounded-full "
-              />
+              <img src={ProfilePic} alt="" className="rounded-full " />
               <FaGithub
                 className="text-3xl absolute bottom-14 left-8 bg-purple-600 rounded-full hover:bg-black 
           cursor-pointer"

@@ -16,11 +16,7 @@ const NavBar = () => {
       <div>
         <h2>
           <span className="md:hidden inline">
-            <Avatar
-              src={
-                "https://i.pinimg.com/originals/c0/4b/01/c04b017b6b9d1c189e15e6559aeb3ca8.png"
-              }
-            />
+            <Avatar src={ProfilePhoto} />
           </span>
           AKHIL <span className="text-purple-800">K KULKARNI</span>
         </h2>
@@ -49,7 +45,7 @@ const NavBar = () => {
             </div>
             {/* Menu items */}
             <motion.a
-              whileHover={{ y: -2, scale: 1.1 }}
+              whileHover={{ y: -2 ,scale:1.1}}
               href="#"
               className="text-white"
               onClick={() => setIsMenuOpen(false)}
