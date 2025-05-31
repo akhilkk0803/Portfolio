@@ -8,6 +8,7 @@ import Skills from "./Skills";
 import Education from "./Education";
 import Profile from "./Profile";
 import Footer from "./Footer";
+import Contact from "./Contact";
 const Home = () => {
   return (
     <>
@@ -36,7 +37,7 @@ const Home = () => {
               <div className="">
                 <a
                   href="../../public/Final-resume.pdf"
-                  download={"Final-resume.pdf"}
+                  download={"AKHILKKULKARNI_resume.pdf"}
                 >
                   <span className="text-purple-600 flex gap-1">
                     {" "}
@@ -79,6 +80,7 @@ const Home = () => {
       <Projects />
       <Education />
       <Profile />
+      <Contact />
       <Footer />
     </>
   );

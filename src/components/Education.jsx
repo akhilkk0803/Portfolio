@@ -1,14 +1,8 @@
 import React from "react";
 import {
-  Avatar,
   Step,
-  StepDescription,
-  StepIcon,
   StepIndicator,
-  StepNumber,
   StepSeparator,
-  StepStatus,
-  StepTitle,
   Stepper,
   useSteps,
 } from "@chakra-ui/react";
@@ -40,39 +34,55 @@ const steps = [
     year: "2021-2025",
     logo: "https://upload.wikimedia.org/wikipedia/en/f/fd/NIE_University_logo.svg",
     cgpa: "9",
-    study: "Bachelor of Engineering -Information Science and Engineering",
-    info: "Object Oriented Programming , Database Managment Systems ,Data Structes and Alogirthm ,Finite Automata,Computer Networks,Operating Systems",
+    study: "Bachelor of Engineering - Information Science and Engineering",
+    info: "OOP, DBMS, Data Structures, Algorithms, Finite Automata, Computer Networks, Operating Systems",
   },
 ];
 
 const Education = () => {
   return (
-    <div className="text-white p-6 flex flex-col gap-2 items-center justify-center " id="education">
-      <p className="text-3xl">Education</p>
+    <div
+      className="text-white p-6 flex flex-col gap-4 items-center justify-center"
+      id="education"
+    >
+      <p className="text-3xl font-bold text-center mb-6 text-purple-500">
+        Education
+      </p>
       <Stepper orientation="vertical" colorScheme="purple">
         {steps.map((el, ind) => (
-          <div className="p-4">
-            <Step key={ind}>
-              <StepIndicator>{ind + 1}</StepIndicator>
-              <div className="flex flex-col   border border-blue-400 p-4 rounded-lg">
-                <div className="flex justify-start p-2 gap-3">
+          <div className="p-4 w-full" key={ind}>
+            <Step>
+              <StepIndicator
+                className="text-white"
+                style={{ fontSize: "1.5rem", fontWeight: "bold" }}
+              >
+                {ind + 1}
+              </StepIndicator>
+              <div className="flex flex-col gap-4 bg-gray-800 p-6 rounded-lg shadow-md hover:scale-105 transition-all">
+                <div className="flex justify-start gap-4 items-center">
                   <img
                     src={el.logo}
-                    className="h-12 w-12 rounded-lg"
-                    alt="logo"
+                    className="h-16 w-16 rounded-full"
+                    alt="school logo"
                   />
                   <div>
-                    <p className="text-lg font-semibold">{el.school}</p>
-                    <p>{el.study}</p>
-                    <p>{el.year}</p>
+                    <p className="text-xl font-semibold">{el.school}</p>
+                    <p className="text-sm">{el.study}</p>
+                    <p className="text-sm text-gray-400">{el.year}</p>
                   </div>
                 </div>
                 {el.cgpa && (
-                  <div>
-                    <p>CGPA/Percentage: {el?.cgpa}</p>
+                  <div className="mt-2">
+                    <p className="text-lg font-medium text-gray-300">
+                      CGPA/Percentage: {el.cgpa}
+                    </p>
                   </div>
                 )}
-                <div>{el?.info}</div>
+                {el.info && (
+                  <div className="mt-2">
+                    <p className="text-sm text-gray-400">{el.info}</p>
+                  </div>
+                )}
               </div>
               <StepSeparator style={{ borderColor: "purple" }} />
             </Step>

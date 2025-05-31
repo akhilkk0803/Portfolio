@@ -31,14 +31,14 @@ const Profile = () => {
       href={link}
       target="_blank"
       rel="noopener noreferrer"
-      className="hover:no-underline"
+      className="group hover:no-underline"
     >
-      <div className="bg-gray-800 p-4 rounded-lg cursor-pointer">
-        <div className="flex items-center gap-4">
+      <div className="bg-gray-800 p-6 rounded-lg shadow-xl transition-transform transform group-hover:scale-105">
+        <div className="flex items-center gap-6">
           <Avatar src={logo} alt={name} size="lg" />
           <div>
-            <h3 className="text-lg font-semibold">{name}</h3>
-            <p className="text-sm text-gray-400 mb-2">{description}</p>
+            <h3 className="text-xl font-semibold text-white">{name}</h3>
+            <p className="text-sm text-gray-400 mt-2">{description}</p>
           </div>
         </div>
       </div>
@@ -46,9 +46,11 @@ const Profile = () => {
   );
 
   return (
-    <div className="text-white" id="profile">
-      <h2 className="text-3xl mb-4 text-center">My Profiles</h2>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-5 p-4">
+    <div className="text-white p-6" id="profile">
+      <h2 className="text-4xl font-extrabold text-center text-purple-600 mb-8">
+        My Profiles
+      </h2>
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
         {profiles.map((profile, index) => (
           <ProfileCard key={index} {...profile} />
         ))}
